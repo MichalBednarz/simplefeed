@@ -9,6 +9,6 @@ jobs:
     steps:
     - name: Save PR comments in .storage
       id: sample
-      uses: MichalBednarz/sample-action@master
+      uses: MichalBednarz/pr-info-action@master
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
