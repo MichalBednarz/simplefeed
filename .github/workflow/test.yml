@@ -1,0 +1,16 @@
+on:
+  issue_comment:
+    types: [created, deleted, edited]
+jobs:
+  pr_info_action_job:
+    runs-on: ubuntu-latest
+    name: A job to save PR review comments
+    steps:
+    - name: Save PR comments in .storage
+      id: pr_info
+      uses: MichalBednarz/sample-action@master
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Echo comments
+      run: echo 'Pr comments ${{ steps.pr_info.outputs.comments }}.'
+
