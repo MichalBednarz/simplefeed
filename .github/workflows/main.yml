@@ -3,17 +3,12 @@ on:
     types: [closed]
 
 jobs:
-  hello_world_job:
+  sample_action_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: A job to save PR review comments
     steps:
-    - name: Hello world action step
-      id: hello
+    - name: Save PR comments in .storage
+      id: sample
       uses: MichalBednarz/sample-action@master
       with:
-        who-to-greet: 'Mona the Octocat'
         myToken: ${{ secrets.GITHUB_TOKEN }}
-        storage-token: ${{ secrets.STORAGE_TOKEN }}
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
