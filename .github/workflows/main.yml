@@ -11,4 +11,4 @@ jobs:
       id: sample
       uses: MichalBednarz/sample-action@master
       with:
-        myToken: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
