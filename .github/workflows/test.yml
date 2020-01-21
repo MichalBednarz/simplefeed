@@ -10,5 +10,5 @@ jobs:
       uses: MichalBednarz/sample-action@master
     - name: Checkout repository
       uses: actions/checkout@v2 # does clean option remove file?
-    - run: sbt generateSnapshot
+    - run: echo | git status
 
