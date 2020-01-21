@@ -4,13 +4,10 @@ on:
 jobs:
   pr_info_action_job:
     runs-on: ubuntu-latest
-    name: A job to save PR review comments
+    name: A job to save and echo file content
     steps:
-    - name: Save PR comments in .storage
-      id: pr_info
+    - name: Create temporary file
       uses: MichalBednarz/sample-action@master
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Echo comments
-      run: echo 'Pr comments ${{ steps.pr_info.outputs.comments }}.'
+    - name: Echo file content
+      run: echo | cat my_file.txt
 
