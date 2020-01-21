@@ -2,12 +2,13 @@ on:
   issue_comment:
     types: [created, deleted, edited]
 jobs:
-  pr_info_action_job:
+  test_job:
     runs-on: ubuntu-latest
     name: A job to save and echo file content
     steps:
     - name: Create temporary file
       uses: MichalBednarz/sample-action@master
-    - name: Echo file content
-      run: echo | cat my_file.txt
+    - name: Checkout repository
+      uses: actions/checkout@v2 # does clean option remove file?
+    - run: sbt generateSnapshot
 
