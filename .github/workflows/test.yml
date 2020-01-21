@@ -6,9 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to save and echo file content
     steps:
-    - name: Create temporary file
-      uses: MichalBednarz/sample-action@master
     - name: Checkout repository
       uses: actions/checkout@v2 # does clean option remove file?
+    - run: echo | git status
+    - name: Create temporary file
+      uses: MichalBednarz/sample-action@master
     - run: echo | git status
 
